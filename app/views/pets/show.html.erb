@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @pet.name %>
+</p>
+
+<p>
+  <strong>Raza:</strong>
+  <%= @pet.breed %>
+</p>
+
+<p>
+  <strong>Fecha de nacimiento:</strong>
+  <%= @pet.birthday.strftime('%d/%m/%Y') %>
+</p>
+
+<p>
+  <strong>Altura promedio:</strong>
+  <%= @pet.avg_ht %>
+</p>
+
+<p>
+  <strong>Peso promedio:</strong>
+  <%= @pet.avg_wt %>
+</p>
+
+<p>
+  <strong>Altura maxima:</strong>
+  <%= @pet.max_ht %>
+</p>
+
+<p>
+  <strong>Peso maximo:</strong>
+  <%= @pet.max_wt %>
+</p>
+
+<h3>History</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Altura (en cm)</th>
+      <th>Peso (en kg)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pet.pet_histories.each do |history| %>
+    <tr>
+      <td><%= history.created_at.strftime('%d/%m/%Y') %></td>
+      <td><%= history.height %></td>
+      <td><%= history.weight %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
